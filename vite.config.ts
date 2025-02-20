@@ -6,7 +6,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'), // Alias for src
+      '@': path.resolve(__dirname, 'src'), // Alias for `src/`
+    },
+  },
+  build: {
+    rollupOptions: {
+      external: [],
     },
   },
 });

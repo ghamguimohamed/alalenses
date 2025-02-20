@@ -5,12 +5,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': '/src', // Ensures correct import paths
+      '@': '/src', // Ensure correct imports
     },
   },
   build: {
     rollupOptions: {
-      input: 'index.html', // Ensure Vite starts from index.html
+      external: ['/src/main.tsx'], // Explicitly marking main.tsx as external
     },
   },
   base: './', // Fixes asset loading issues on Netlify

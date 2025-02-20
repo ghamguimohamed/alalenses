@@ -1,17 +1,17 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'), // Ensure correct import paths
+      '@': '/src', // Use this instead of `path.resolve`
     },
   },
   build: {
     rollupOptions: {
-      external: ['/src/main.tsx'], // Merged from second block
+      // Remove `external` option unless you're explicitly using it for dependencies
     },
   },
+  base: './', // This ensures correct asset paths on Netlify
 });

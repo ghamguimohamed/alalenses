@@ -11,14 +11,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: [],
+      external: ['/src/main.tsx'], // Merged from second block
     },
   },
 });
-export default {
-  build: {
-    rollupOptions: {
-      external: ['/src/main.tsx']
-    }
-  }
-}

@@ -5,13 +5,13 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': '/src', // Use this instead of `path.resolve`
+      '@': '/src', // Ensures correct import paths
     },
   },
   build: {
     rollupOptions: {
-      // Remove `external` option unless you're explicitly using it for dependencies
+      input: 'index.html', // Ensure Vite starts from index.html
     },
   },
-  base: './', // This ensures correct asset paths on Netlify
+  base: './', // Fixes asset loading issues on Netlify
 });
